@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="An exciting slot machine game with multiple paylines">
+  <title>🎰 Lucky Spinner Slot Machine</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-coins"></i> Lucky Spinner Slot Machine <i class="fas fa-coins"></i></h1>
+      <div class="game-info">
+        <div id="balance">Balance: $0</div>
+        <div id="status" class="status-message">Welcome to Lucky Spinner!</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-panel">
+        <div class="input-group">
+          <label for="deposit"><i class="fas fa-money-bill-wave"></i> Deposit Amount:</label>
+          <div class="input-wrapper">
+            <input type="number" id="deposit" min="1" placeholder="Enter amount" />
+            <button onclick="setDeposit()" class="btn-deposit">Deposit</button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="lines"><i class="fas fa-bars"></i> Paylines (1-3):</label>
+          <input type="range" id="lines" min="1" max="3" value="1" />
+          <span id="lines-value">1</span>
+        </div>
+
+        <div class="input-group">
+          <label for="bet"><i class="fas fa-dollar-sign"></i> Bet per Line:</label>
+          <div class="input-wrapper">
+            <input type="number" id="bet" min="1" placeholder="Enter bet" />
+            <button class="btn-bet" onclick="setBet(1)">+1</button>
+            <button class="btn-bet" onclick="setBet(5)">+5</button>
+          </div>
+        </div>
+
+        <button onclick="playGame()" class="btn-spin" id="spin-btn">
+          <i class="fas fa-redo"></i> SPIN
+        </button>
+      </section>
+
+      <section class="slot-display">
+        <div id="rows" class="slot-rows"></div>
+        <div id="result" class="result-message"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="help-text">
+        <p><strong>How to play:</strong> Deposit money, select paylines, set your bet, and spin!</p>
+        <p><strong>Payouts:</strong> A=5x, B=4x, C=3x, D=2x</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

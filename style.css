@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #e67e22;
+    --primary-dark: #d35400;
+    --secondary-color: #3498db;
+    --background-dark: #2c3e50;
+    --background-medium: #34495e;
+    --background-light: #3d566e;
+    --text-color: #ecf0f1;
+    --win-color: #2ecc71;
+    --lose-color: #e74c3c;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  .container {
+    background: var(--background-medium);
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  header {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    background: var(--background-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .status-message {
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .control-panel {
+    background: var(--background-light);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin: 15px 0;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .input-wrapper {
+    display: flex;
+    gap: 8px;
+  }
+  
+  input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #ecf0f1;
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  input[type="range"] {
+    flex: 1;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #7f8c8d;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  .btn-deposit {
+    background-color: var(--secondary-color);
+  }
+  
+  .btn-deposit:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-bet {
+    background-color: #7f8c8d;
+    padding: 10px;
+  }
+  
+  .btn-bet:hover {
+    background-color: #95a5a6;
+  }
+  
+  .btn-spin {
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .btn-spin:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .slot-display {
+    background: var(--background-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .slot-rows {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin: 20px 0;
+    line-height: 2.5rem;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .result-message {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .win {
+    color: var(--win-color);
+    animation: pulse 0.5s 3;
+  }
+  
+  .lose {
+    color: var(--lose-color);
+  }
+  
+  footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+  }
+  
+  .help-text {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .help-text p {
+    margin-bottom: 8px;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 15px;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    .input-wrapper {
+      flex-direction: column;
+    }
+    
+    button {
+      width: 100%;
+    }
+  }
