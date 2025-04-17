@@ -84,5 +84,9 @@ JavaScript (ES6+)
 📚 Libraries:
 Font Awesome for icons
 
+LiVE DEMO:
+
+https://slotmachinesimulator.netlify.app/
+
 
 
